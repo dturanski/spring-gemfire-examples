@@ -30,13 +30,12 @@ public class Client {
 	public static void main(String args[]) throws IOException {
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("client/cache-config.xml");
-		Region<Long,Customer> region = context.getBean(Region.class);
-	
-		
-		Customer dave = new Customer(1L,new EmailAddress("dave@matthews.com"),"Dave","Matthews");
-		Customer alicia = new Customer(2L,new EmailAddress("alicia@keys.com"),"Alicia","Keys");
-		region.put(dave.getId(),dave);
-		region.put(alicia.getId(),alicia);
+//		Region<Long,Customer> region = context.getBean(Region.class);
+
+		System.out.println("Press <Enter> to terminate");
+		System.in.read();
+		System.exit(0);
+
 		 
 	}
 }
