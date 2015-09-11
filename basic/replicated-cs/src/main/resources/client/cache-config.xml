@@ -13,13 +13,13 @@
 	<gfe:pool subscription-enabled="true"  >
 		<gfe:server host="localhost" port="40404"/>
  	</gfe:pool>
-	<gfe:client-cache properties-ref="gemfire-props" ready-for-events="true"/>
-	<gfe:client-region id="Customer" shortcut="CACHING_PROXY">
+	<gfe:client-cache properties-ref="gemfire-props"/>
+	<gfe:client-region id="Customer" data-policy="EMPTY">
 		<gfe:cache-listener>
 			<bean class="org.springframework.data.gemfire.examples.util.LoggingCacheListener"/>
 		</gfe:cache-listener>
 
-		<gfe:key-interest result-policy="KEYS_VALUES" durable="false">
+		<gfe:key-interest result-policy="KEYS_VALUES">
 			<bean id="key" class="java.lang.String">
 				<constructor-arg value="ALL_KEYS" />
 			</bean>
