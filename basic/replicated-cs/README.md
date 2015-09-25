@@ -1,6 +1,28 @@
 Gemfire Durable Client with Cache Listener Example:
 =========================================================
 
+Running the example:
+==
+
+* Clone the repo
+* Open two terminal sessions:
+
+In one:
+
+     ./gradlew -q run-replicate-cs -Pmain=Server
+
+In the other:
+
+    ./gradlew -q run-replicate-cs -Pmain=Client
+    
+Press <ENTER> in the Server console to create additional entries.
+
+Alternately you can import this project into an IDE and run from there, e.g.:
+
+     ./gradlew eclipse
+     
+Import the individual project along with `spring-gemfire-examples-common`
+
 Summary
 ==
 
