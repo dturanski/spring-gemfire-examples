@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
     
     <util:properties id="gemfire-props">
-        <prop key="log-level">fine</prop>
+        <prop key="log-level">info</prop>
     </util:properties>
     
     <gfe:cache properties-ref="gemfire-props">

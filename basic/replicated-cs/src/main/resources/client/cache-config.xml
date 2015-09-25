@@ -7,14 +7,14 @@
 		http://www.springframework.org/schema/data/gemfire http://www.springframework.org/schema/data/gemfire/spring-data-gemfire.xsd http://www.springframework.org/schema/gemfire http://www.springframework.org/schema/gemfire/spring-gemfire.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
 	<util:properties id="gemfire-props">
-		<!--<prop key="durable-client-id">11</prop>-->
-		<!--<prop key="durable-client-timeout">200</prop>-->
+		<prop key="durable-client-id">11</prop>
+		<prop key="durable-client-timeout">2000</prop>
 	</util:properties>
 	<gfe:pool subscription-enabled="true"  >
 		<gfe:server host="localhost" port="40404"/>
  	</gfe:pool>
-	<gfe:client-cache properties-ref="gemfire-props"/>
-	<gfe:client-region id="Customer" data-policy="EMPTY">
+	<gfe:client-cache properties-ref="gemfire-props" ready-for-events="true"/>
+	<gfe:client-region id="Customer" data-policy="NORMAL">
 		<gfe:cache-listener>
 			<bean class="org.springframework.data.gemfire.examples.util.LoggingCacheListener"/>
 		</gfe:cache-listener>
